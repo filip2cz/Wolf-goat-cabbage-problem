@@ -6,55 +6,79 @@ bool zeli = false;
 int choice;
 while (working)
 {
+    Thread.Sleep(1000);
     choice = new Random().Next(0, 3);
-
+    //Console.WriteLine(choice);
+    
+    prevoznik = !prevoznik;
+    
     if (choice == 0)
     {
-        vlk = !vlk;
-        if (vlk == koza)
+        if (vlk == koza == !prevoznik)
         {
-            Console.WriteLine("Koza umřela, jdeme o krok zpět");
+            vlk = !vlk;
         }
-        else if (koza == zeli)
+        else if (koza == zeli == !prevoznik)
         {
-            Console.WriteLine("Zelí umřelo, jdeme o krok zpět");
+            vlk = !vlk;
         }
         else
         {
+            Console.WriteLine("Převozník přejel sám");
+        }
+    }
+    else if (choice == 1)
+    {
+        vlk = !vlk;
+        if (vlk == koza == !prevoznik)
+        {
+            vlk = !vlk;
+        }
+        else if (koza == zeli == !prevoznik)
+        {
+            vlk = !vlk;
+        }
+        else
+        {
+            Console.WriteLine("Vlk převezen");
+        }
+    }
+    else if (choice == 2)
+    {
+        koza = !koza;
+        if (vlk == koza == !prevoznik)
+        {
+            vlk = !vlk;
+        }
+        else if (koza == zeli == !prevoznik)
+        {
+            vlk = !vlk;
+        }
+        else
+        {
+            Console.WriteLine("Koza převezena");
+        }
+    }
+    else if (choice == 3)
+    {
+        zeli = !zeli;
+        if (vlk == koza == !prevoznik)
+        {
+            vlk = !vlk;
+        }
+        else if (koza == zeli == !prevoznik)
+        {
+            vlk = !vlk;
+        }
+        else
+        {
+            Console.WriteLine("Zelí převezeno");
+        }
+    }
 
-        }
-    }
-    if (choice == 1)
+    if (vlk == true && koza == true && zeli == true)
     {
-        if (vlk == koza)
-        {
-            Console.WriteLine("Koza umřela, jdeme o krok zpět");
-        }
-        else if (koza == zeli)
-        {
-            Console.WriteLine("Zelí umřelo, jdeme o krok zpět");
-        }
-    }
-    if (choice == 2)
-    {
-        if (vlk == koza)
-        {
-            Console.WriteLine("Koza umřela, jdeme o krok zpět");
-        }
-        if (koza == zeli)
-        {
-            Console.WriteLine("Zelí umřelo, jdeme o krok zpět");
-        }
-    }
-    if (choice == 3)
-    {
-        if (vlk == koza)
-        {
-            Console.WriteLine("Koza umřela, jdeme o krok zpět");
-        }
-        if (koza == zeli)
-        {
-            Console.WriteLine("Zelí umřelo, jdeme o krok zpět");
-        }
+        Console.WriteLine("Vše je na druhé straně");
+        working = false;
     }
 }
