@@ -10,7 +10,7 @@ while (working)
     Thread.Sleep(5);
     choice = new Random().Next(0, 3);
     pokusy++;
-    Console.WriteLine(choice);
+    //Console.WriteLine(choice);
     
     prevoznik = !prevoznik;
     
