@@ -7,7 +7,7 @@ int choice;
 int pokusy = 0;
 while (working)
 {
-    Thread.Sleep(500);
+    Thread.Sleep(10);
     choice = new Random().Next(0, 3);
     pokusy++;
     //Console.WriteLine(choice);
