@@ -4,10 +4,12 @@ bool vlk = false;
 bool koza = false;
 bool zeli = false;
 int choice;
+int pokusy = 0;
 while (working)
 {
-    Thread.Sleep(1000);
+    Thread.Sleep(500);
     choice = new Random().Next(0, 3);
+    pokusy++;
     //Console.WriteLine(choice);
     
     prevoznik = !prevoznik;
@@ -79,6 +81,8 @@ while (working)
     if (vlk == true && koza == true && zeli == true)
     {
         Console.WriteLine("Vše je na druhé straně");
+        Console.Write("Počet pokusů: ");
+        Console.WriteLine(pokusy);
         working = false;
     }
 }
